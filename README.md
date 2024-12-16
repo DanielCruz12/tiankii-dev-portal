@@ -1,26 +1,66 @@
-# tiankii-docs
+<p align="center">
+  <img src="./assets/tiankii-banner.png" alt="Tiankii Developer Portal" width="800"/>
+</p>
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+<h1 align="center">Tiankii Developer Portal ⚡</h1>
 
-Run development server:
+<p align="center">
+  Seamlessly integrate Bitcoin Lightning payments into your Shopify store or platform with <strong>Tiankii</strong>.
+</p>
 
-```bash
-npm run dev
-# or
-pnpm dev
-# or
-yarn dev
-```
+---
 
-Open http://localhost:3000 with your browser to see the result.
+## 🚀 What is Tiankii?
 
-## Learn More
+**Tiankii** enables businesses worldwide to accept **Bitcoin payments** using the **Lightning Network** with:
+- **Zero transaction fees** ⚡
+- **P2P payments** globally
+- **Simple integration** with platforms like **Shopify** and custom apps.
 
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.vercel.app) - learn about Fumadocs
+## 🛠️ Integration Guide: Shopify
+
+Follow these simple steps to configure **Tiankii** with your Shopify store:
+
+1. **Link Shopify with Tiankii**: Use API credentials in Tiankii settings.
+2. **Enable Payments**: Add Bitcoin as a **Manual Payment Method**.
+
+📖 **Full Documentation**: [Read the Guide](https://www.tiankii.com)
+
+---
+
+## 📸 Screenshots
+
+![Setup Shopify App](./assets/image1.png)
+*Create API credentials on Shopify.*
+
+![Add Script](./assets/image5.png)
+*Add the Tiankii script to your Checkout page.*
+
+---
+
+## 🎥 Video Tutorial
+Watch the full setup process: [How to Enable Bitcoin Payments](https://www.youtube.com/watch?v=P0CKjTNkNEc).
+
+---
+
+## 🌐 Links
+
+- **Website**: [Tiankii](https://www.tiankii.com)
+- **Documentation**: [Tiankii Docs](https://pay.tiankii.com)
+- **Support**: Chat with us live on [tiankii.com](https://www.tiankii.com)
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions to improve the Tiankii integration experience. Fork this repository, submit your pull requests, or open an issue.
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+<p align="center">Made with ❤️ by Daniel Cruz</p>
