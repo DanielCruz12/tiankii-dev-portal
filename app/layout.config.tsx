@@ -9,7 +9,7 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
  */
 export const baseOptions: BaseLayoutProps = {
   nav: {
-    title: 'Tiankii',
+    title: 'Tiankii Dev Portal',
   },
   links: [
     {
@@ -18,4 +18,6 @@ export const baseOptions: BaseLayoutProps = {
       active: 'nested-url',
     },
   ],
+  disableThemeSwitch: true, // disable
+  githubUrl: 'https://github.com/DanielCruz12/tiankii-dev-portal'
 };

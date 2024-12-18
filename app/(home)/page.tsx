@@ -2,7 +2,6 @@ import Link from 'next/link';
 export default function HomePage() {
   return (
     <main className="flex flex-col items-center justify-center text-center p-6">
-    
       <div className="flex flex-col items-center justify-center">
         <p className="text-gray-200 text-4xl mb-6 max-w-xl">
           Welcome to the Tiankii Developer Portal
@@ -38,7 +37,7 @@ export default function HomePage() {
       </Link>
 
       <div className="flex flex-col md:flex-row justify-center items-center pt-5 rounded-lg">
-        <h2 className="text-2xl font-bold mb-4">Community{' '}</h2>
+        <h2 className="text-2xl font-bold mb-4">Community</h2>{' '}
         <div className="flex items-center space-x-4 mb-4">
           <span className="bg-gray-700 px-2 py-1 rounded">
             stars <span className="text-blue-400">1.5K</span>
