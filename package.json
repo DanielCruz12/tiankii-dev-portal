@@ -2,6 +2,14 @@
   "name": "tiankii-docs",
   "version": "0.0.0",
   "private": true,
+  "license": "MIT",
+  "description": "A documentation site for Tiankii",
+  "repository": "https://github.com/tiankii/tiankii-docs",
+  "keywords": [
+    "tiankii",
+    "documentation"
+  ],
+  "author": "Daniel Cruz",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
