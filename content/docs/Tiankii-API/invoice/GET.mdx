@@ -1,4 +1,51 @@
 ---
-title: 🟢 GET
-description: Comprehensive guide for Tiankii API methods and integration.
+title: 🟢 GET /invoice/status
+description: Retrieve the status of a specific invoice using the Tiankii API.
 ---
+
+## Get Invoice Status
+
+### Authorization
+
+**API Key**  
+This request is using the API Key from the collection **TIANKII API**.
+
+### Endpoint
+
+**GET** `/v1/invoice/status?invoiceId=5Sdd2tvW3ZRSojvcrYQ1u8`  
+`{{HOST}}/v1/invoice/status?invoiceId=5Sdd2tvW3ZRSojvcrYQ1u8`
+
+### Parameters
+
+| Parameter   | Type   | Required | Description                     |
+|-------------|--------|----------|---------------------------------|
+| `invoiceId` | String | Yes      | Unique identifier of the invoice.|
+
+### Request Example
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+maxBodyLength: Infinity,
+  url: '{{HOST}}/v1/invoice/status?invoiceId=5Sdd2tvW3ZRSojvcrYQ1u8',
+  headers: { }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+```
+
+### Response
+
+```json
+{
+  "status": "new"
+}
+```

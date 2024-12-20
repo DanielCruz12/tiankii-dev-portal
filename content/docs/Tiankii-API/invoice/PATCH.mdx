@@ -1,4 +1,75 @@
 ---
-title: 🟣 PATCH
-description: Comprehensive guide for Tiankii API methods and integration.
+title: 🟣 PATCH /invoice/pm
+description: Change the payment method of an invoice using the Tiankii API.
 ---
+
+## Change Invoice Payment Method
+
+### Authorization
+
+**API Key**  
+This request is using the API Key from the collection **TIANKII API**.
+
+### Endpoint
+
+**PATCH** `/v1/invoice/pm`  
+`{{HOST}}/v1/invoice/pm`
+
+### Request Body
+
+Send the request body in raw JSON format. Below is an example:
+
+```json
+{
+  "invoiceId": "{{invoiceId}}",
+  "paymentMethodId": "{{newPaymentMethodId}}"
+}
+```
+
+### Request Example
+
+```javascript
+var axios = require('axios');
+var data = '{\r\n  "invoiceId": "AQNCTzam1RuXzoR9LtwgUg",\r\n  "paymentMethodId": "BTC_StrikeLike"\r\n}';
+
+var config = {
+  method: 'patch',
+maxBodyLength: Infinity,
+  url: 'https://api.md.tiankii.com/v1/invoice/pm',
+  headers: { },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+
+```
+
+### Response
+
+```json
+{
+  "invoiceId": "AQNCTzam1RuXzoR9LtwgUg",
+  "invoiceWallet": "melvinr007",
+  "status": "new",
+  "cryptoCode": "SATS",
+  "btcDue": 13,
+  "paid": 0,
+  "currency": "USD",
+  "amount": 0.01,
+  "expirationSeconds": "2024-11-08T16:47:53.000Z",
+  "rate": 76201.04,
+  "nationalRate": 76201.04,
+  "btcAddress": "lnbc130n1pnju0vxpp5ut09wp5a73nh9nya0s0yjextf95sz7qj2j3t4m8vzxlkm8u0d8yqdp9d4jkcanfdefrqvphypgy75eq2dskcetnyqcrzcqzzsxqrrs0sp5j7wmvj3jxhym5naep79jej3y3npyyj2anch92pk0xfl76z8y45ys9qxpqysgq3pwwd7fjqxx677zh2ghlkwaw58ach4hwfa8d39up4pqnrasgdhw4x4r6gds2zpq5d9vf9046jvqgpmsca6g7w6xqelk6z8zv6tplczspnzgqt3",
+  "paymentMethodId": "BTC_StrikeLike",
+  "storeId": "D3doKH1gvex6nwJE4kU1vvuV4hoRQ56MsYCsyjcRZSPi",
+  "appId": "BVb2bK2yNHqe86MJhiBSThXfiFB"
+}
+
+```

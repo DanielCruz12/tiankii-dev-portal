@@ -1,5 +1,79 @@
 ---
-title: 🟢 GET
-description: Retrieve all active Bitcoin payment methods for a store.
+title: 🟢 GET /:storeId/payment-method/actives
+description: Retrieve active payment methods for a specific store using Tiankii API.
 ---
 
+## Payment Methods
+
+### Authorization
+
+**API Key**  
+This folder is using the API Key from the collection **TIANKII API**.
+
+### Endpoint
+
+**GET** `/v1/:storeId/payment-method/actives`  
+`{{HOST}}/v1/:storeId/payment-method/actives`
+
+### Authorization
+
+**API Key**  
+This request is using the API Key from the collection **TIANKII API**.
+
+### Path Variables
+
+| Variable  | Description            |
+|-----------|------------------------|
+| `storeId` | Unique identifier for the store. |
+
+### Request Example
+
+```javascript
+var axios = require('axios');
+
+var config = {
+  method: 'get',
+maxBodyLength: Infinity,
+  url: '{{HOST}}/v1/:storeId/payment-method/actives',
+  headers: { }
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+```
+### Response
+
+``` json
+[
+  {
+    "id": "BTC_BBWLike",
+    "tag": "Bitcoin ⚡",
+    "cryptoImage": "/imlegacy/bitcoin-lightning-native.svg",
+    "cryptoCode": "BTC"
+  },
+  {
+    "id": "BTC_ChivoBTCLike",
+    "tag": "Chivo BTC",
+    "cryptoImage": "/imlegacy/Chivo-BTC-Icon.svg",
+    "cryptoCode": "BTC"
+  },
+  {
+    "id": "BTC_LndHubLike",
+    "tag": "Bitcoin ⚡",
+    "cryptoImage": "/imlegacy/bitcoin-lightning-native.svg",
+    "cryptoCode": "BTC"
+  },
+  {
+    "id": "BTC_StrikeLike",
+    "tag": "Bitcoin ⚡",
+    "cryptoImage": "/imlegacy/bitcoin-lightning-native.svg",
+    "cryptoCode": "BTC"
+  }
+]
+```

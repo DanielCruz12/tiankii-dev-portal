@@ -1,4 +1,109 @@
 ---
-title: 🟡 POST
-description: Comprehensive guide for Tiankii API methods and integration.
+title: 🟡 POST /invoice
+description: Create an invoice using Tiankii API with customizable payment methods and buyer details.
 ---
+
+## Invoice
+
+These requests require a valid **APP_ID** and **STORE_ID**.
+
+### Authorization
+
+**API Key**  
+This folder is using the API Key from the collection **TIANKII API**.
+
+### Endpoint
+
+**POST** `/v1/invoice?paymentMethod=:paymentMethodId`  
+`{{HOST}}/v1/invoice?paymentMethod=:paymentMethodId`
+
+### Authorization Details
+
+| Key       | Value       |
+|-----------|-------------|
+| `api_key` | `{{TOKEN_POS}}` |
+
+### Parameters
+
+| Parameter      | Type   | Required | Description                                                                 |
+|----------------|--------|----------|-----------------------------------------------------------------------------|
+| `paymentMethod` | String | Optional | Unique ID for the payment method. Defaults to the store's default method. |
+
+### Body Example
+
+**Content-Type**: `application/json`
+
+```json
+{
+    "amount": 5,
+    "currency": "USD", //USD, SATS
+    "storeId": "{{STORE_ID}}",
+    "appId": "{{APP_ID}}",
+    "metadata": {
+        "orderId": "",
+        "posData": "", //JSON as String, information of the product
+        "description": ""
+    },
+  "buyer": { // Information from the client
+    "customerId": "",
+    "buyerName": "",
+    "buyerEmail": "",
+    "buyerPhone": "",
+    "buyerCountry": "",
+    "buyerZip": "",
+    "buyerState": "",
+    "buyerCity": "",
+    "buyerAddress1": "",
+    "buyerAddress2": ""
+  },
+  "webhook": ""
+}
+```
+
+### Request Example
+
+```javascript
+var axios = require('axios');
+var data = '{\r\n    "amount": 5,\r\n    "currency": "USD", //USD, SATS\r\n    "storeId": "{{STORE_ID}}",\r\n    "appId": "{{APP_ID}}",\r\n    "metadata": {\r\n        "posData": "", //JSON as String, information of the product\r\n        "description": ""\r\n    },\r\n  "buyer": { // Information from the client \r\n    "customerId": "",\r\n    "buyerName": "",\r\n    "buyerEmail": "",\r\n    "buyerPhone": "",\r\n    "buyerCountry": "",\r\n    "buyerZip": "",\r\n    "buyerState": "",\r\n    "buyerCity": "",\r\n    "buyerAddress1": "",\r\n    "buyerAddress2": ""\r\n  }\r\n}';
+
+var config = {
+  method: 'post',
+maxBodyLength: Infinity,
+  url: '{{HOST}}/v1/invoice',
+  headers: { },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+
+```
+
+### Response
+
+```json
+{
+  "invoiceId": "N7RBPuUgwALYCnT2ogE",
+  "invoiceWallet": "wallet",
+  "status": "new",
+  "cryptoCode": "BTC",
+  "btcDue": 11604,
+  "paid": 0,
+  "currency": "USD",
+  "amount": 5,
+  "expirationDate": "2024-01-30T15:56:28.000Z",
+  "rate": 43086.94,
+  "nationalRate": 43086.94,
+  "btcAddress": "lnbc116040n1pjmjx9gpp5xvs3qq6lzshp5ln79wehjjg6rm5kz2ul7wjuddv35ftwscqzzsxqyz5vqsp5sedeugml7zggdnvaqmg4fdfl7edyxjq9qyyssqep70lp25kjhkwwqzx9zc74ujvfkgpzyarv0",
+  "paymentMethodId": "BTC_AlbyLike",
+  "storeId": "AsEYdhMwXuVx1QpeciE65N81dzG5Kfod",
+  "appId": "EWnEwAvjjSAA6ovgmdE"
+}
+
+```
