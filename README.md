@@ -49,3 +49,6 @@ We welcome contributions to improve the Tiankii integration experience. Fork thi
 This project is licensed under the [MIT License](LICENSE).
 
 <p align="center">Made with ❤️ by <a href="https://x.com/Daniel_CruzD" target="_blank">Daniel Cruz</a></p>
+<p align="center"><a href="https://pay.tiankii.com/m/dandubua/a1453f52-ca98-41f1-8b60-ce25f0f257ba" target="_blank">Donation Link</a></p>
+
+
