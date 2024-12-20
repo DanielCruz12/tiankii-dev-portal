@@ -2,3 +2,90 @@
 title: 🟢 GET /me
 description: Comprehensive guide for Tiankii API methods and integration.
 ---
+
+## Get Account Information
+
+### Authorization
+
+**API Key**  
+This folder is using the API Key from the collection **TIANKII API**.
+
+### Endpoint
+
+**GET** `/me`
+`{{HOST}}/v1/store/me`
+
+### Authorization
+
+**API Key**  
+This request is using the API Key from the collection **TIANKII API**.
+
+```javascript
+var axios = require("axios");
+
+var config = {
+  method: "get",
+  maxBodyLength: Infinity,
+  url: "{{HOST}}/v1/store/me",
+  headers: {},
+};
+
+axios(config)
+  .then(function (response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+```
+### Response
+
+```json
+{
+  "Id": "AsEYdhMwXzG5Kfod",
+  "SpeedPolicy": 1,
+  "StoreCertificate": null,
+  "StoreName": "tiankii dev",
+  "StoreWebsite": null,
+  "DefaultCrypto": null,
+  "customer_type": 0,
+  "support_type": 0,
+  "wallet_type": 0,
+  "Currency": "USD",
+  "settings": {
+    "networkFeeMode": "MultiplePaymentsOnly",
+    "requiresRefundEmail": false,
+    "lightningAmountInSatoshi": true,
+    "lightningPrivateRouteHints": false,
+    "onChainWithLnInvoiceFallback": false,
+    "lazyPaymentMethods": true,
+    "redirectAutomatically": false,
+    "showRecommendedFee": true,
+    "recommendedFeeBlockTarget": 1,
+    "defaultCurrencyPairs": [],
+    "defaultLang": "es-ES",
+    "monitoringExpiration": 1440,
+    "invoiceExpiration": 15,
+    "spread": 0,
+    "preferredExchange": "bitpay",
+    "paymentMethodCriteria": [],
+    "customCSS": null,
+    "customLogo": null,
+    "htmlTitle": null,
+    "autoDetectLanguage": false,
+    "rateScripting": false,
+    "rateScript": null,
+    "anyoneCanInvoice": true,
+    "lightningDescriptionTemplate": "Paid to {StoreName} (Order ID: {OrderId})",
+    "paymentTolerance": 0,
+    "excludedPaymentMethods": null,
+    "emailSettings": null,
+    "payJoinEnabled": false,
+    "hints": {
+      "wallet": true,
+      "lightning": false
+    }
+  }
+}
+```
+
